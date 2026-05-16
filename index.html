@@ -3,320 +3,183 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ryan Flanagan — General Contractor</title>
+  <title>RT Flanagan Construction</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --navy: #1a2e44;
-      --gold: #c8922a;
-      --gold-light: #e8b24a;
-      --off-white: #f8f6f2;
-      --text: #2c2c2c;
-      --gray: #6b7280;
-      --border: #e2ddd6;
+      --bg: #f6f5f2;
+      --text: #1a1a18;
+      --muted: #8c8a84;
+      --border: #dedad4;
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: var(--off-white);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-weight: 300;
+      background: var(--bg);
       color: var(--text);
-      line-height: 1.6;
+      line-height: 1.65;
     }
 
-    /* HEADER */
     header {
-      background: var(--navy);
-      color: white;
-      text-align: center;
-      padding: 48px 24px 40px;
+      padding: 72px 48px 60px;
+      max-width: 1100px;
+      margin: 0 auto;
     }
 
-    header .badge {
-      display: inline-block;
-      background: var(--gold);
-      color: white;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      padding: 4px 14px;
-      border-radius: 20px;
-      margin-bottom: 16px;
-    }
-
-    header h1 {
-      font-size: clamp(28px, 6vw, 44px);
-      font-weight: 800;
-      letter-spacing: -0.5px;
-      margin-bottom: 8px;
-    }
-
-    header p.tagline {
-      font-size: 16px;
-      color: #a8bbd0;
+    .name {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 300;
+      font-size: clamp(38px, 6vw, 68px);
+      letter-spacing: 0.01em;
+      line-height: 1;
       margin-bottom: 28px;
     }
 
-    .contact-bar {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: var(--gold);
-      color: white;
-      font-size: 18px;
-      font-weight: 700;
-      padding: 14px 28px;
-      border-radius: 50px;
-      text-decoration: none;
-      transition: background 0.2s;
+    .condemned {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(20px, 2.8vw, 28px);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--muted);
+      margin-bottom: 32px;
+      line-height: 1.3;
     }
 
-    .contact-bar:hover { background: var(--gold-light); }
-
-    .contact-bar svg { width: 20px; height: 20px; flex-shrink: 0; }
-
-    /* MAIN */
-    main {
-      max-width: 680px;
-      margin: 0 auto;
-      padding: 0 16px 60px;
-    }
-
-    /* SECTION LABEL */
-    .section-label {
-      text-align: center;
-      margin: 44px 0 20px;
-    }
-
-    .section-label h2 {
-      font-size: 22px;
-      font-weight: 800;
-      color: var(--navy);
-      margin-bottom: 4px;
-    }
-
-    .section-label p {
+    .phone {
       font-size: 14px;
-      color: var(--gray);
+      font-weight: 300;
+      letter-spacing: 0.1em;
+      color: var(--text);
     }
 
-    /* BEFORE / AFTER */
-    .photo-grid {
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .photos {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 48px 48px;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 12px;
+      gap: 20px;
     }
 
-    .photo-card {
+    .photo-wrap {
       position: relative;
-      border-radius: 12px;
-      overflow: hidden;
-      background: #d1cdc7;
-      aspect-ratio: 4/3;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+      background: #d8d5cf;
     }
 
-    .photo-card img {
+    .photo-wrap img {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+      height: auto;
       display: block;
     }
 
-    .photo-card .placeholder {
+    .photo-placeholder {
       width: 100%;
       height: 100%;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
-      color: #8a8480;
-      font-size: 13px;
-      gap: 8px;
-    }
-
-    .photo-card .placeholder svg {
-      width: 36px;
-      height: 36px;
-      opacity: 0.5;
-    }
-
-    .photo-label {
-      position: absolute;
-      bottom: 10px;
-      left: 10px;
-      background: rgba(0,0,0,0.62);
-      color: white;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
+      color: #b0ada7;
+      font-size: 12px;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      padding: 4px 10px;
-      border-radius: 6px;
     }
 
-    .photo-label.after { background: var(--gold); }
-
-    /* ABOUT STRIP */
-    .about-strip {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 24px 22px;
-      margin-top: 32px;
-      display: flex;
-      gap: 16px;
-      align-items: flex-start;
+    .photo-caption {
+      position: absolute;
+      bottom: 14px;
+      left: 14px;
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.75);
     }
 
-    .about-strip .icon-wrap {
-      background: var(--navy);
-      border-radius: 10px;
-      padding: 10px;
-      flex-shrink: 0;
-    }
-
-    .about-strip .icon-wrap svg {
-      width: 24px;
-      height: 24px;
-      color: var(--gold);
-    }
-
-    .about-strip h3 {
-      font-size: 16px;
-      font-weight: 700;
-      color: var(--navy);
-      margin-bottom: 4px;
-    }
-
-    .about-strip p {
-      font-size: 14px;
-      color: var(--gray);
-    }
-
-    /* FORM SECTION */
     .form-section {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 28px 22px;
-      margin-top: 16px;
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 56px 48px 88px;
     }
 
-    .form-section h3 {
-      font-size: 18px;
-      font-weight: 800;
-      color: var(--navy);
-      margin-bottom: 4px;
-    }
-
-    .form-section .sub {
-      font-size: 14px;
-      color: var(--gray);
-      margin-bottom: 20px;
+    .form-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 300;
+      color: var(--muted);
+      margin-bottom: 28px;
+      letter-spacing: 0.02em;
     }
 
     .form-section iframe {
       width: 100%;
       border: none;
-      border-radius: 8px;
       min-height: 680px;
     }
 
-    /* FOOTER */
     footer {
+      border-top: 1px solid var(--border);
       text-align: center;
-      padding: 24px;
-      font-size: 13px;
-      color: #b0a89e;
+      padding: 28px;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 600px) {
+      header { padding: 48px 24px 40px; }
+      .photos { padding: 32px 24px; gap: 12px; }
+      .form-section { padding: 40px 24px 64px; }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <div class="badge">General Contractor</div>
-    <h1>Ryan Flanagan</h1>
-    <p class="tagline">Custom homes &amp; renovations, built right.</p>
-    <a class="contact-bar" href="tel:6083337145">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.62 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.69a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
-      </svg>
-      (608) 333-7145
-    </a>
+    <h1 class="name">RT Flanagan Construction</h1>
+    <p class="condemned">This home was condemned in 2024.</p>
+    <p class="phone">(608) 333-7145</p>
   </header>
 
-  <main>
+  <hr>
 
-    <div class="section-label">
-      <h2>This Home, Built by Ryan</h2>
-      <p>You're standing in front of it — here's where it started.</p>
+  <div class="photos">
+    <div class="photo-wrap">
+      <img src="images/before.jpg" alt="Before" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+      <div class="photo-placeholder" style="display:none;">Before</div>
+      <span class="photo-caption">Before</span>
     </div>
-
-    <div class="photo-grid">
-      <div class="photo-card">
-        <!-- BEFORE PHOTO: replace src with your image path, e.g. src="images/before.jpg" -->
-        <img src="images/before.jpg" alt="Before" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-        <div class="placeholder" style="display:none;">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
-          Add before photo
-        </div>
-        <span class="photo-label">Before</span>
-      </div>
-      <div class="photo-card">
-        <!-- AFTER PHOTO: replace src with your image path, e.g. src="images/after.jpg" -->
-        <img src="images/after.jpg" alt="After" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-        <div class="placeholder" style="display:none;">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
-          Add after photo
-        </div>
-        <span class="photo-label after">After</span>
-      </div>
+    <div class="photo-wrap">
+      <img src="images/after.jpg" alt="After" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+      <div class="photo-placeholder" style="display:none;">After</div>
+      <span class="photo-caption">After</span>
     </div>
+  </div>
 
-    <div class="about-strip">
-      <div class="icon-wrap">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-          <polyline points="9 22 9 12 15 12 15 22"/>
-        </svg>
-      </div>
-      <div>
-        <h3>Built from the ground up</h3>
-        <p>Ryan designed and built this home himself. If you have a project — new build, addition, or renovation — he'd love to hear about it.</p>
-      </div>
-    </div>
+  <hr>
 
-    <div class="section-label">
-      <h2>Tell Ryan About Your Project</h2>
-      <p>Fill out the form below and he'll be in touch.</p>
-    </div>
-
-    <div class="form-section">
-      <!--
-        GOOGLE FORM INSTRUCTIONS:
-        1. Go to forms.google.com and create a new form.
-        2. Add questions like: Name, Phone, Email, Project Type, Description, Timeline.
-        3. Click the "Send" button (top right).
-        4. Click the "<>" (embed) icon.
-        5. Copy the src URL from the iframe code — it looks like:
-           https://docs.google.com/forms/d/e/XXXXX/viewform?embedded=true
-        6. Replace the src below with your URL.
-      -->
-      <h3>Get in Touch</h3>
-      <p class="sub">Takes about 2 minutes. Ryan will follow up personally.</p>
-      <iframe
-        src="https://forms.gle/u9Rh99xYKrN96Kjq9"
-        title="Project inquiry form"
-        loading="lazy"
-      >Loading form…</iframe>
-    </div>
-
-  </main>
+  <div class="form-section">
+    <p class="form-heading">Get in touch</p>
+    <iframe
+      src="https://forms.gle/u9Rh99xYKrN96Kjq9"
+      title="Project inquiry form"
+      loading="lazy"
+    >Loading form…</iframe>
+  </div>
 
   <footer>
-    &copy; 2026 Ryan Flanagan · General Contractor
+    Ryan Flanagan &nbsp;·&nbsp; General Contractor
   </footer>
 
 </body>
