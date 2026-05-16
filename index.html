@@ -136,6 +136,37 @@
       min-height: 680px;
     }
 
+    .reviews-section {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 0 48px 72px;
+      text-align: center;
+    }
+
+    .reviews-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 300;
+      color: var(--muted);
+      margin-bottom: 16px;
+      letter-spacing: 0.02em;
+    }
+
+    .reviews-link {
+      font-size: 13px;
+      font-weight: 300;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 2px;
+    }
+
+    .reviews-link:hover {
+      border-bottom-color: var(--text);
+    }
+
     footer {
       border-top: 1px solid var(--border);
       text-align: center;
@@ -175,6 +206,16 @@
       <div class="photo-placeholder" style="display:none;">After</div>
       <span class="photo-caption">After</span>
     </div>
+    <div class="photo-wrap">
+      <img src="images/before2.jpg" alt="Before" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+      <div class="photo-placeholder" style="display:none;">Before</div>
+      <span class="photo-caption">Before</span>
+    </div>
+    <div class="photo-wrap">
+      <img src="images/after2.jpg" alt="After" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+      <div class="photo-placeholder" style="display:none;">After</div>
+      <span class="photo-caption">After</span>
+    </div>
   </div>
 
   <hr>
@@ -186,6 +227,11 @@
       title="Project inquiry form"
       loading="lazy"
     >Loading form…</iframe>
+  </div>
+
+  <div class="reviews-section">
+    <p class="reviews-heading">See what clients are saying</p>
+    <a class="reviews-link" href="https://www.google.com/search?q=RT+Flanagan+Google#lrd=0x52b32dfd70948767:0x6a3fcd52e4fffd5d,1,,,," target="_blank" rel="noopener noreferrer">Read reviews on Google &rarr;</a>
   </div>
 
   <footer>
